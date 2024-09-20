@@ -4,26 +4,26 @@ def print_board(board):
         print("-" * 5)
 
 def check_winner(board):
-    # Check rows and columns
+    #Check rows and columns
     for i in range(3):
         if board[i][0] == board[i][1] == board[i][2] != ' ':
-            return board[i][0]  # Winner in a row
+            return board[i][0]  #Winner in a row
         if board[0][i] == board[1][i] == board[2][i] != ' ':
-            return board[0][i]  # Winner in a column
+            return board[0][i]  #Winner in a column
 
-    # Check diagonals
+    #Check diagonals
     if board[0][0] == board[1][1] == board[2][2] != ' ':
-        return board[0][0]  # Winner in the main diagonal
+        return board[0][0]  #Winner in the main diagonal
     if board[0][2] == board[1][1] == board[2][0] != ' ':
-        return board[0][2]  # Winner in the other diagonal
+        return board[0][2]  #Winner in the other diagonal
 
-    return None  # No winner
+    return None  #No winner
 
 def is_board_full(board):
     for row in board:
         if ' ' in row:
-            return False  # There's an empty space, board is not full
-    return True  # Board is full
+            return False  #There's an empty space, board is not full
+    return True  #Board is full
 
 def tic_tac_toe():
     board = [[' ' for _ in range(3)] for _ in range(3)]
@@ -50,7 +50,7 @@ def tic_tac_toe():
 
             current_player = 'O' if current_player == 'X' else 'X'
         else:
-            print("Invalid move. The space is already taken. Try again.")
+            print("Invalid move. The space is already taken. Try again!")
 
 if __name__ == "__main__":
     tic_tac_toe()
