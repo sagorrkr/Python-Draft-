@@ -9,7 +9,7 @@ match name:
         print("Who?")
 
 
-
+#below code also does the same job
 '''if name == "Harry":
     print("Grayffindor")
 elif name == "Hermione":
