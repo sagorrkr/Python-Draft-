@@ -1,3 +1,6 @@
-from Saying import hello
+from Saying import *
 
-hello("mark")
+hello("Mark")
+
+
+goodbye("Eveeryone!")
