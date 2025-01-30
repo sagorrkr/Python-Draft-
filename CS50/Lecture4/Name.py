@@ -10,6 +10,8 @@ else:
 
 
 
+ #or this could be used
+   
 try:
     print("Hello, My name is ", sys.argv[1])
 except IndexError:
