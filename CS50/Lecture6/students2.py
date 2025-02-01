@@ -3,6 +3,9 @@ with open("students.csv") as file:
         name , house = line.rstrip().split(",")
         print(f"{name} is in{house}")
 
+
+
+#for sorting them alphabetically
 students = []
 
 with open("students.csv") as file:
