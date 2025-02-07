@@ -28,7 +28,7 @@ class Student:
 
 def main():
     student = get_student()
-    student.house = "Number Four, Privet Drive"                             #student._house = "Number Four, Privet Drive"    this will break the purpose of the code
+    student.house = "Number Four, Privet Drive" #student._house = "Number Four, Privet Drive" this will break the purpose of the code
     print(student)
 
 def get_student():
