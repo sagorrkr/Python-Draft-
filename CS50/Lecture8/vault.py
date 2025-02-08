@@ -18,10 +18,6 @@ galleons = potter.galleons + weasley.galleons
 sickeles = potter.sickeles + weasley.sickeles
 knuts = potter.knuts + weasley.knuts
 
-print(galleons)
-print(sickeles)
-print(knuts)
-
 total = Vault(galleons, sickeles, knuts)
 
 print(total)
