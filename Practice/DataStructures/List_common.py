@@ -1,3 +1,5 @@
+#Write a program to find common elements between two lists.
+
 def common_elem(lst1, lst2):
     return[element for element in lst1 if element in lst2]
 
