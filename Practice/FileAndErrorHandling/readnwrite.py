@@ -20,5 +20,6 @@ def readFromfile(filepath):
             print("File not found, Check the filepath again!")
 
 filepath = "user_input.txt"
+
 writeTofile(filepath)
 readFromfile(filepath)
