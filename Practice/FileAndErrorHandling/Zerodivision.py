@@ -2,11 +2,11 @@
 
 def divide_number():
     try:
-        nemerator = float(input("Enter the numerator: "))
+        numerator = float(input("Enter the numerator: "))
         denominator = float(input("Enter the dinominator: "))
 
-        result = nemerator / denominator
-        print(f"The result of {nemerator} / {denominator} is {result}")
+        result = numerator / denominator
+        print(f"The result of {numerator} / {denominator} is {result}")
 
     except ZeroDivisionError:
         print("Error: Division by zero is not allowed. ")
