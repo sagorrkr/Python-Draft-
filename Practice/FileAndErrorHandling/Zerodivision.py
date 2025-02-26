@@ -11,7 +11,7 @@ def divide_number():
     except ZeroDivisionError:
         print("Error: Division by zero is not allowed. ")
     except ValueError:
-        print("Error. Please Enter valid numeric value: ")
+        print("Error: Please Enter valid numeric value: ")
     
 
 divide_number()
