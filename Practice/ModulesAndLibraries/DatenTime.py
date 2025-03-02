@@ -9,7 +9,8 @@ formatted_day_time = now.strftime("%y-%m-%d %H:%M:%S")
 print(f"Current date and time : {formatted_day_time}")
 
 
-'''%Y: Year with century (e.g., 2023).
+'''
+%Y: Year with century (e.g., 2023).
 %y: Year without century (e.g., 23).
 %m: Month as a zero-padded number (e.g., 01 to 12).
 %d: Day of the month as a zero-padded number (e.g., 01 to 31).
@@ -19,4 +20,5 @@ print(f"Current date and time : {formatted_day_time}")
 %S: Second as a zero-padded number (e.g., 00 to 59).
 %p: AM or PM.
 %A: Full weekday name (e.g., Monday).
-%B: Full month name (e.g., January).'''
+%B: Full month name (e.g., January).
+'''
