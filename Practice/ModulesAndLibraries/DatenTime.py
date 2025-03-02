@@ -10,6 +10,7 @@ print(f"Current date and time : {formatted_day_time}")
 
 
 '''
+Other date and time formats:
 %Y: Year with century (e.g., 2023).
 %y: Year without century (e.g., 23).
 %m: Month as a zero-padded number (e.g., 01 to 12).
