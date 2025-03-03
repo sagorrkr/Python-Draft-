@@ -15,6 +15,8 @@ def list_file_in_directory(directory_path):
 
     except FileNotFoundError:
         print(f"Error: The directory {directory_path} doesn't exist. ")
+    except PermissionError:
+        print(f"Error: Permission Denied to access {directory_path}")
 
 directory_path = "/Users/sagor/Desktop/Python-Draft-/Practice/ModulesAndLibraries"
 list_file_in_directory(directory_path)    
