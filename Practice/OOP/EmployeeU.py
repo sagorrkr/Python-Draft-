@@ -8,7 +8,7 @@ class Employee:
         self.salary = salary
 
     def yearly_salary(self):
-        return self.salary * 12
+        print(f"{self.name}'s yearly salary is {self.salary * 12}") 
     
     def Raise(self, raiseAmount):
         if raiseAmount >= 0:
@@ -39,6 +39,8 @@ if __name__ == "__main__":
     employee.DisplayDetails()
     employee.Raise(2000)    
     employee.DisplayDetails()
+    employee.yearly_salary()
+
 
         
         
