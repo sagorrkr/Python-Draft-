@@ -7,10 +7,12 @@ class Person:
         self.age = age
         self.height = height
     
-    def grouth(self, height_growth):
+    def growth(self, height_growth):
         if height_growth > 0:
             self.height += height_growth
             print(f"{self.name} grew {height_growth}cm. New Height: {self.height}cm")
+        else:
+            print("Growth must be more than 0")
 
     def celebrateBirthday(self):
         self.age += 1
@@ -19,5 +21,5 @@ class Person:
 if __name__ == "__main__":
     person = Person(name = "Abir", age = 22, height = 165)
 
-    person.grouth(4)
+    person.growth(4)
     person.celebrateBirthday()
