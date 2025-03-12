@@ -12,14 +12,14 @@ class Inventory:
   def sell(self, sell):
     self.stock -= sell
   
-  def chcekStock(self):
+  def chekStock(self):
     return self.stock
 
 if __name__ == "__main__":
   store = Inventory(store_name = "ABC", stock = 100)
 
   store.restock(50)
-  print(store.chcekStock())
+  print(store.chekStock())
 
   store.sell(20)
-  print(store.chcekStock())
+  print(store.chekStock())
