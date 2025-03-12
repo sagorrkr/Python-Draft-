@@ -15,7 +15,7 @@ class Inventory:
 
   def sell(self, quantity):
     if quantity >= 0:    
-        if quantity < self.stock:
+        if quantity <= self.stock:
             self.stock -= quantity
             print(f"Sold {quantity} items. Current Stock:{self.stock} items")
         else:
