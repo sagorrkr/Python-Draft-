@@ -44,7 +44,7 @@ class Bank:
         if self.accounts:
             print("\nAll account balances: ")
             for account_number, account in self.accounts.items():
-                print(f" Account: {account_number} \nBalance: {account.balance:.2f}")
+                print(f"Name: {account.account_holder} Account: {account_number} \nBalance: {account.balance:.2f}")
 
         else:
             print("No account in the bank. ")
