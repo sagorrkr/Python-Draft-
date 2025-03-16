@@ -63,6 +63,8 @@ if __name__ == "__main__":
     bank.display_all_accounts()
 
     account1.deposit(3000)
+    account2.deposit(3000)
+
     account2.withdraw(500)
     account3.withdraw(3969)
 
