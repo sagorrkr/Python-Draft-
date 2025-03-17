@@ -17,3 +17,12 @@ class Library:
         new_book = Book(title, author)
         self.books.append(new_book)
         print(f"Added {title} by {author} to the Library")
+
+    def remove_book(self, title):
+        for book in self.books:
+            if book.title == title:
+                self.books.remove(book)
+                print(f"Removed {title} from the Library. ")
+                return
+        print(f"The book {title} is not found in Library. ")
+    
