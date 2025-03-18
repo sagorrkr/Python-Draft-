@@ -26,3 +26,12 @@ class Library:
                 return
         print(f"The book {title} is not found in Library. ")
     
+    def display_available_books(self):
+        available_books = [book for book in self.books if book.is_available]
+        if available_books:
+            print(f"\nAvailable Books: ")
+            for book in available_books:
+                print(book)
+        else:
+            print("No book is available in the library.")
+
