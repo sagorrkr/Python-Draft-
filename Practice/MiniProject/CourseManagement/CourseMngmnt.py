@@ -18,7 +18,13 @@ class Student:
             print(f"{self.name} has enrolled in {course.course_name}")
         else:
             print(f"{self.name} has already enrolled in this course.")
-
+    def display_enrolled_courses(self):
+        if self.enrolled_courses:
+            print(f"\n{self.name} Enrolled courses")   
+            for course in self.enrolled_courses:
+                print(course)    
+        else:
+            print(f"{self.name} is not enrolled in any course")
     
 
     
