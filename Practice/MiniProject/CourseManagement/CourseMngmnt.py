@@ -38,7 +38,19 @@ student3 = Student(student_id = 20240513001, name = "Ridoy")
 
 student1.enroll(course1)
 student1.enroll(course2)
+student1.enroll(course4)
+
+student2.enroll(course2)
+student2.enroll(course3)
+student2.enroll(course4)
+
+student3.enroll(course1)
+student3.enroll(course3)
+student3.enroll(course4)
 
 student1.display_enrolled_courses() 
+student2.display_enrolled_courses() 
+
+student3.display_enrolled_courses() 
 
     
