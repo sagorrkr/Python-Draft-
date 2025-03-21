@@ -48,3 +48,12 @@ class Passenger:
                 print(f"Can not cancel flight {flight.flight_number}")
         else:
             print(f"{self.name} does not have a flight for {flight.flight_number}")
+
+
+class Airline:
+    def __init__(self):
+        self.flights = []
+    
+    def add_flight(self, flight):
+        self.flights.append(flight)
+        print(f"Added flight: {flight.flight_number}")
