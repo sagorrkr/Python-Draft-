@@ -114,8 +114,8 @@ if __name__ == "__main__":
     passenger1.display_bookings()
     passenger2.display_bookings()
 
-
     passenger1.cancel_booking(flight1)
+    passenger2.cancel_booking(flight1)
 
     passenger1.display_bookings()
 
