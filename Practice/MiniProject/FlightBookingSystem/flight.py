@@ -57,3 +57,18 @@ class Airline:
     def add_flight(self, flight):
         self.flights.append(flight)
         print(f"Added flight: {flight.flight_number}")
+
+    def remove_flights(self, flight_number):
+        for flight in self.flights:
+            if flight.flight_number == flight_number:
+                self.flights.remove(flight)
+                print(f"Removed flight {flight_number}")
+                return
+            else:
+                print(f"Flight {flight_number} not found.")
+            
+    def search_flight(self, flight_number):
+        for flight in self.flights:
+            if flight.flight_number == flight_number:
+                return flight
+        return None
