@@ -49,6 +49,14 @@ class Passenger:
         else:
             print(f"{self.name} does not have a flight for {flight.flight_number}")
 
+    def display_bookings(self):
+        if self.bookings:
+            print(f"{self.name}'s Bookings: ")
+            for flight in self.bookings:
+                print(flight)
+        else:
+            print(f"No flight is booked for {self.name}")
+
 
 class Airline:
     def __init__(self):
@@ -72,3 +80,43 @@ class Airline:
             if flight.flight_number == flight_number:
                 return flight
         return None
+    
+    def display_flights(self):
+        if self.flights:
+            print("\nAvailable Flights: ")
+            for flight in self.flights:
+                print(flight)
+        else:
+            print("\nNo flights Available. ")
+
+#testing the code
+            
+if __name__ == "__main__":
+    airline = Airline()
+
+    flight1 = Flight(flight_number = "F101", origin = "Dhaka", destination = "New York", total_seats = 100)
+    flight2 = Flight(flight_number = "F102", origin = "Dhaka", destination = "Beijing", total_seats = 120)
+    flight3 = Flight(flight_number = "F103", origin = "Dhaka", destination = "London", total_seats = 110)
+
+
+    airline.add_flight(flight1)
+    airline.add_flight(flight2)
+    airline.add_flight(flight3)
+
+    airline.display_flights()
+
+    passenger1 = Passenger(name = "Roy", passenger_id = "5203004")
+    passenger2 = Passenger(name = "Bob", passenger_id = "5103005")
+
+    passenger1.add_bookings(flight1)
+    passenger2.add_bookings(flight2)
+
+    passenger1.display_bookings()
+    passenger2.display_bookings()
+
+
+    passenger1.cancel_booking(flight1)
+
+    passenger1.display_bookings()
+
+    airline.display_flights()
