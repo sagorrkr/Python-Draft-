@@ -26,3 +26,21 @@ class Customer:
     def __str__(self):
         return f"Customer {self.customer_id}: {self.name} , {self.email}"
     
+    def place_order(self):
+        if self.cart.products:
+            order = Order(customer = self, products = self.cart.products)
+
+
+class Cart:
+    def __init__(self):
+        self.products = []
+
+class Order:
+    order_counter = 1
+    
+    def __init__(self, customer, products):
+        self.order_id = Order.order.counter
+        Order.order_counter += 1
+        self.customer = customer
+        self.products = products
+        self.total_price = sum(product.price * quantity for product, quantity in products)
