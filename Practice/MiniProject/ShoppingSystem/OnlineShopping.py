@@ -35,6 +35,13 @@ class Cart:
     def __init__(self):
         self.products = []
 
+    def add_products(self, product, quantity = 1):
+        if product.reduce_stock(quantity):
+            self.products.append(product, quantity)
+            print(f"Added {quantity} x {product.name} to the cart.")
+        else:
+            print(f"Insuffecient stock for {product.name}")
+
 class Order:
     order_counter = 1
     
