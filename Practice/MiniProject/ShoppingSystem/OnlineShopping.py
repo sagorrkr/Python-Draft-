@@ -83,3 +83,9 @@ class Order:
         self.customer = customer
         self.products = products
         self.total_price = sum(product.price * quantity for product, quantity in products)
+
+
+if __name__ == "__main__":
+    product1 = Product(product_id=1, name="Laptop", price=999.99, stock=10)
+    product1 = Product(product_id=2, name="Mobile", price=599.99, stock=10)
+    product1 = Product(product_id=3, name="Headphones", price=99.99, stock=100)
