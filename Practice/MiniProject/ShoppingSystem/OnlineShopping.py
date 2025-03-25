@@ -29,18 +29,50 @@ class Customer:
     def place_order(self):
         if self.cart.products:
             order = Order(customer = self, products = self.cart.products)
+            self.order_history.append(order)
+            self.cart.clear_cart()
+
+    def view_order_history(self):
+        if self.order_history:
+            print(f"{self.name}'s order history: ")
+            for order in self.order_history:
+                print(order)
+        else:
+            print(f"{self.name} has no order history.")
+
 
 
 class Cart:
     def __init__(self):
         self.products = []
 
-    def add_products(self, product, quantity = 1):
+    def add_product(self, product, quantity = 1):
         if product.reduce_stock(quantity):
             self.products.append(product, quantity)
             print(f"Added {quantity} x {product.name} to the cart.")
         else:
             print(f"Insuffecient stock for {product.name}")
+
+    def remove_products(self, product):
+        for item in self.products:
+            if item[0].product_id == product.product_id:
+                self.products.remove(item)
+                print(f"Removed {product.name} from Cart.")
+                return
+        print(f"{product.name} not found in the Cart.")
+
+    def view_cart(self):
+        if self.products:
+            print(f"\nYour cart:")
+            total = 0
+            for product, quantity in self.products:
+                print(f"{product.name} x {quantity} - {product.price * quantity}")
+                total += product.price * quantity
+            print(f"Your total is {total: .2f}")
+        else:
+            print("Your cart is empty.")
+    def clear_cart(self):
+        self.products = []
 
 class Order:
     order_counter = 1
