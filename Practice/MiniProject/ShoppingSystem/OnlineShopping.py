@@ -83,9 +83,20 @@ class Order:
         self.customer = customer
         self.products = products
         self.total_price = sum(product.price * quantity for product, quantity in products)
+    def __str__(self):
+        order_detsils = "\n".join(f"{quantity} x {product.name} - {product.price * quantity: .2f}" for product, quantity in self.products)
+
+        return(f"Order Id: {self.order_id} \n"
+               f"Customer: {self.customer.name} \n"
+               f"Products: \n{order_detsils} \n"
+               f"Total: {self.total_price:.2f}")
 
 
 if __name__ == "__main__":
     product1 = Product(product_id=1, name="Laptop", price=999.99, stock=10)
     product1 = Product(product_id=2, name="Mobile", price=599.99, stock=10)
     product1 = Product(product_id=3, name="Headphones", price=99.99, stock=100)
+
+    customer = Customer(customer_id = 1122, name = "Bob", email = "bob@vscode.com")
+
+    customer.cart.add_product(product1, quantity= 3)
