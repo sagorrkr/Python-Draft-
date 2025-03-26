@@ -20,7 +20,7 @@ class Customer:
         self.customer_id = customer_id
         self.name = name
         self.email = email
-        self.cari = ()
+        self.cart = Cart()
         self.order_history = []
 
     def __str__(self):
@@ -31,6 +31,8 @@ class Customer:
             order = Order(customer = self, products = self.cart.products)
             self.order_history.append(order)
             self.cart.clear_cart()
+        else:
+            print("Your cart is empty. Add products to place order.")
 
     def view_order_history(self):
         if self.order_history:
@@ -48,7 +50,7 @@ class Cart:
 
     def add_product(self, product, quantity = 1):
         if product.reduce_stock(quantity):
-            self.products.append(product, quantity)
+            self.products.append((product, quantity)) 
             print(f"Added {quantity} x {product.name} to the cart.")
         else:
             print(f"Insuffecient stock for {product.name}")
@@ -66,7 +68,7 @@ class Cart:
             print(f"\nYour cart:")
             total = 0
             for product, quantity in self.products:
-                print(f"{product.name} x {quantity} - {product.price * quantity}")
+                print(f"{product.name} x {quantity} - {product.price * quantity: .2f}")
                 total += product.price * quantity
             print(f"Your total is {total: .2f}")
         else:
@@ -78,7 +80,7 @@ class Order:
     order_counter = 1
     
     def __init__(self, customer, products):
-        self.order_id = Order.order.counter
+        self.order_id = Order.order_counter
         Order.order_counter += 1
         self.customer = customer
         self.products = products
@@ -94,9 +96,13 @@ class Order:
 
 if __name__ == "__main__":
     product1 = Product(product_id=1, name="Laptop", price=999.99, stock=10)
-    product1 = Product(product_id=2, name="Mobile", price=599.99, stock=10)
-    product1 = Product(product_id=3, name="Headphones", price=99.99, stock=100)
+    product2 = Product(product_id=2, name="Mobile", price=599.99, stock=10)
+    product3 = Product(product_id=3, name="Headphones", price=99.99, stock=100)
 
     customer = Customer(customer_id = 1122, name = "Bob", email = "bob@vscode.com")
 
-    customer.cart.add_product(product1, quantity= 3)
+    customer.cart.add_product(product1, quantity = 3)
+    customer.cart.add_product(product2, quantity = 2)
+    customer.cart.add_product(product3, quantity = 4)
+
+    customer.cart.view_cart()
