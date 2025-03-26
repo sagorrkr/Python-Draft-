@@ -36,7 +36,7 @@ class Customer:
 
     def view_order_history(self):
         if self.order_history:
-            print(f"{self.name}'s order history: ")
+            print(f"\n{self.name}'s order history: ")
             for order in self.order_history:
                 print(order)
         else:
@@ -51,7 +51,7 @@ class Cart:
     def add_product(self, product, quantity = 1):
         if product.reduce_stock(quantity):
             self.products.append((product, quantity)) 
-            print(f"Added {quantity} x {product.name} to the cart.")
+            print(f"Added {quantity}x {product.name} to the cart.")
         else:
             print(f"Insuffecient stock for {product.name}")
 
@@ -68,7 +68,7 @@ class Cart:
             print(f"\nYour cart:")
             total = 0
             for product, quantity in self.products:
-                print(f"{product.name} x {quantity} - {product.price * quantity: .2f}")
+                print(f"{product.name}x {quantity} - {product.price * quantity: .2f}")
                 total += product.price * quantity
             print(f"Your total is {total: .2f}")
         else:
@@ -86,7 +86,7 @@ class Order:
         self.products = products
         self.total_price = sum(product.price * quantity for product, quantity in products)
     def __str__(self):
-        order_detsils = "\n".join(f"{quantity} x {product.name} - {product.price * quantity: .2f}" for product, quantity in self.products)
+        order_detsils = "\n".join(f"{quantity}x {product.name} - {product.price * quantity: .2f}" for product, quantity in self.products)
 
         return(f"Order Id: {self.order_id} \n"
                f"Customer: {self.customer.name} \n"
@@ -106,3 +106,5 @@ if __name__ == "__main__":
     customer.cart.add_product(product3, quantity = 4)
 
     customer.cart.view_cart()
+    customer.place_order()
+    customer.view_order_history()
